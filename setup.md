@@ -13,8 +13,11 @@ yolov3-tiny.h5
 ### Run in docker
 file: src/vai_quantizer/vai_q_tensorflow2.x/tensorflow_model_optimization/python/examples/quantization/keras/vitis/mnist_cnn_ptq.py
 
+
+dataset path: qua_data
+
 ```
-python3 qua.py
+python3 quantized_model.py
 ```
 
 input:
