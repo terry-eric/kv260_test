@@ -1,0 +1,11 @@
+{
+    "model-name": "yolov3_tiny_printing_416_416",
+    "num-labels": 1,
+    "labels": [
+        {
+            "label": 0,
+            "name": "fail",
+            "display_name": "fail"
+        }
+    ]
+}
