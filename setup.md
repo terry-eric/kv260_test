@@ -68,6 +68,13 @@ xmodel: `/opt/xilinx/kv260-smartcam/share/vitis_ai_library/models/yolov3_coco_41
 
 ### Run smartcam in docker
 
+load smart-camera accelerator
+
+```
+sudo xmutil unloadapp
+sudo xmutil loadapp kv260-smartcam
+```
+
 ```
 smartcam --mipi -W 1920 -H 1080 --target rtsp -a yolov3_coco
 ```
