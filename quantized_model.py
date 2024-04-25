@@ -11,8 +11,11 @@ def load_and_preprocess_image(path):
     image /= 255.0
     return image
 
+# data_dir = "qua_data"
+data_dir = "printing_qua_data"
+
 # 創建一個從文件路徑數據集
-dataset_images = tf.data.Dataset.list_files("qua_data/images/*.jpg")  # 假設所有圖片都是JPG格式
+dataset_images = tf.data.Dataset.list_files(f"{data_dir}/images/*.jpg")  # 假設所有圖片都是JPG格式
 # 加載和預處理圖片
 dataset_images = dataset_images.map(load_and_preprocess_image)
 # 批處理，這裡的批大小根據你的需要和記憶體大小決定
@@ -23,7 +26,7 @@ dataset_images = dataset_images.batch(32)  # 例如，每批處理32張圖片
 
 from tensorflow_model_optimization.quantization.keras.vitis.layers import vitis_activation
 
-model_name = "yolov3-tiny"
+model_name = "yolov3-printing"
 model = tf.keras.models.load_model(f'{model_name}.h5')
 model.summary()
 
@@ -38,4 +41,4 @@ quantized_model = quantizer.quantize_model(
     cle_steps=10,
     include_fast_ft=True)
 
-quantized_model.save(f'new-{model_name}-quantized.h5')
+quantized_model.save(f'{model_name}-quantized.h5')

@@ -38,6 +38,7 @@ command:
 ```
 vai_c_tensorflow2 -m yolov3-tiny-quantized.h5 -a arch.json --options '{"input_shape": "1,224,224,3"}' -o yolov3-tiny
 vai_c_tensorflow2 -m new-yolov3-tiny-quantized.h5 -a arch.json --options '{"input_shape": "1,416,416,3"}' -o new-yolov3-tiny
+vai_c_tensorflow2 -m new-yolov3-quantized.h5 -a arch.json --options '{"input_shape": "1,416,416,3"}' -o new-yolov3
 ```
 
 output:
